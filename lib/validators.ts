@@ -24,3 +24,8 @@ export const insertProductSchema = z.object({
 	banner: z.string().nullable(),
 	price: z.string(),
 });
+
+export const signInFormSchema = z.object({
+	email: z.string().email("メールアドレスが無効です"),
+	password: z.string().min(6, "パスワードは最低６文字である必要があります"),
+});
